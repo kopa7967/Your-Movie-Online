@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}  {% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Orelega+One&display=swap" rel="stylesheet">
+	</head>
+	
+	<body>
+		<nav class="navbar">
+
+			<h2 class="navbar__h2">YMO</h2>
+
+			<ul class="navbar__ul">
+				<li><a href="{{ url_for('index') }}">Home</a></li>
+				<li><a href="{{ url_for('upcoming_vod') }}">Upcoming movies</a></li>
+			</ul>
+		</nav>
+		
+		{% block content %}
+
+
+
+		
+		{% endblock %}
+	</body>
+</html>

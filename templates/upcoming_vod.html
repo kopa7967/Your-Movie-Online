@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+
+{% block title %} New and Upcoming VOD, DVD, and Blu-ray Releases {% endblock %}
+
+{% block content %}
+
+	<section>
+		{% for movie in data.get_data()["results"] %}
+			{% if movie != "\n" %}
+			
+				<div class="movie">
+
+					<div class="movie__img">
+						<img src="{{ movie.a.img['loadlate'] }}">
+					</div>
+				
+					<ul class="movie__details">
+						<li>Title: {{ movie.a.img['alt'] }}</li>
+					
+						<li>{{ movie.find('b').string }}</li>
+					
+					</ul>
+
+				</div>
+			{% endif %}
+		{% endfor %}
+	</section>
+
+{% endblock %}

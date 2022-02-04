@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+
+{% block title %}YMO{% endblock %}
+
+{% block content %}
+
+	<h1 class="h1">What's the movie are you looking for?</h1>	
+	
+	<form method="POST">
+		{{ data.form.csrf_token }}
+		{{ data.form.movie(id_="form") }}
+
+		<div class="div-searchbtn">
+			<input type="submit" value="Search" class="div-searchbtn__input">	
+		</div>
+		
+	</form>
+
+	<section>
+		{% for movie in data.DATA["results"]["movies"] %}
+
+			<div class="movie">
+				<div class="movie__img">
+					<img src="{{ movie['medium_cover_image'] }}">
+				</div>
+		
+				<ul class="movie__details">
+					<li>Title: {{ movie["title"] }}</li>
+					<li>Year: {{ movie["year"] }}</li>
+					<li>Rating: {{ movie["rating"] }}</li>
+
+					<ul class="movie__torrents">
+						{% for torrent in movie["torrents"] %}
+
+							<li><a href="{{ torrent['url'] }}">{{ torrent["quality"] }}</a> ({{ torrent["size"] }})</li>
+
+						{% endfor %}
+					</ul>
+				</ul>
+			</div>
+		
+		{% endfor %}
+	</section>
+{% endblock %}	
+		
+	
