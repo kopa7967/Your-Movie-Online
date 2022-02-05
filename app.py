@@ -1,12 +1,11 @@
 from flask import Flask, render_template
-import os
 import requests
 import movies
 
 
 app = Flask(__name__)
 
-SECRET_KEY = "damian.musso22"
+SECRET_KEY = ""
 app.config["SECRET_KEY"] = SECRET_KEY
 
 @app.route("/", methods=['GET', 'POST'])
