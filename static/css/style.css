@@ -117,3 +117,39 @@ section{
 	justify-content: center;
 }
 
+@media screen and (max-width: 412px){
+	.navbar{
+		width: 400px;
+	}
+
+	#form{
+		width: 375px;
+		text-align: center;
+	}
+	
+	h1{
+		text-align: center;
+	}
+
+	section{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.movie{
+		margin-right: 50px;
+		width: 200px;
+		display: flex;
+		flex-direction: column;
+		width-left:20px; 
+	}
+
+	.movie__img{
+		margin: -20px;
+	}
+
+	img{
+		padding:-100px; 
+	}
+}
+
